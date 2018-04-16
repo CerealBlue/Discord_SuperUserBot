@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-# Discord_SuperUserBot
-=======
-# Discord_SuperUserBot
-A Bot For Discord
->>>>>>> c86fc3c8db2b80cceb98db77c573dd5d0a240190
+This is a bot I made to put it on my class' discord server. For now it should:
+      >>>Post Memes /check/ (╯°□°）╯︵ ┻━┻
+      >>>Take Polls
+      >>>Set Reminders
+      >>>Greet You /check/ (╯°□°）╯︵ ┻━┻
+
+So much to do.... 
