@@ -1,27 +1,3 @@
-"""import discord
-
-
-client = discord.Client()
-
-@client.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-
-@client.event
-async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
-
-client.run(TOKEN)"""
-
 #2018-04-13 11:23:13
 
 from discord.ext.commands import Bot
@@ -29,27 +5,58 @@ from discord import Game
 from datetime import datetime
 import sys
 import asyncio
+import random
 
-sys.path.append("/home/sudheendra_raghav/Desktop/Discord/SuperUserBot/MemeTaker_Bot/")
+#sys.path.append("/home/CerealBlue/Desktop/Discord/SuperUserBot/MemeTaker_Bot/")
 
 from mt_b import mt_b_start as memesteal
 
+#TOKEN =
 
 BOT_PREFIX = ("?", "!", "++")
 
-
 client = Bot(command_prefix=BOT_PREFIX)
 
-@client.command(name='sup',
-		aliases=['hey','heyoo','hello'],
-		pass_context = True)
+@client.command(name='greetings',
+                descripition="This command makes SuperUserBot greet you.",
+                brief="Bot Greets"
+		        aliases=['hey','hi','hello', 'sup', 'wassup'],
+		        pass_context = True)
 async def greet(context):
-	await client.say("Sup boy kid"+", "+context.message.author.mention)
+    greeters = [
+        "Wassup,",
+        "Salutations",
+        "Hello from the Cloud!",
+        "My Creator (The great BlueCereal) told me to greet you! Greetings,",
+        "Hello! I stay in a Raspberry Pi! It's doesn't taste like a Pie though :( ..."
+    ]
+	await client.say(random.choice(greeters) + " " + context.message.author.mention + ".")
 
-@client.command(name='time', aliases=['date','weather','day'])
+@client.command(name='time',
+                descripition=
+                "This command displays the date and time in:"
+                "\n\t>YYYY-MM-DD HH:MM:SS:MS"
+                "\n\t>Current Year"
+                "\n\t>Current Month"
+                "\n\t>WeekNumber"
+                "\n\t>WeekdayNumber"
+                "\n\t>Day of the Year"
+                "\n\t>Day of the Month"
+                "\n\t>Day of the Week""
+                "\n\nAlso, why are you this lazy to not look at your phone's time?"
+                brief="Time Displayer"
+                aliases=['date', 'day'])
 async def timeDisplay():
-	await client.say("The date is:\t"+str(datetime.now()))
-
+	await client.say("Time:\n"
+                    "```"+str(datetime.datetime.now())+"```\n"
+                    "Current year: `" +     str(datetime.date.today().strftime("%Y")) + "`\n"
+                    "Current Month: `" +    str(datetime.date.today().strftime("%B")) + "`\n"
+                    "WeekNumber `" +        str(datetime.date.today().strftime("%W")) + "`\n"
+                    "WeekdayNumber: `" +    str(datetime.date.today().strftime("%w")) + "`\n"
+                    "Day of the Year: `" +  str(datetime.date.today().strftime("%j")) + "`\n"
+                    "Day of the Month: `" + str(datetime.date.today().strftime("%d")) + "`\n"
+                    "Day of the Week: `" +  str(datetime.date.today().strftime("%A")) + "`\n"
+                    )
 
 @client.async_event
 async def on_message(message):
@@ -78,12 +85,3 @@ async def on_ready():
 
 
 client.run(TOKEN)
-
-
-
-
-
-
-
-
-
