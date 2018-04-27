@@ -3,5 +3,6 @@ This is a bot I made to put it on my class' discord server. For now it should: <
       >>>Take Polls <br/>
       >>>Set Reminders <br/>
       >>>Greet You /check/ (╯°□°）╯︵ ┻━┻ <br/>
+      >>>Tells You The Date&Time /check/ (╯°□°）╯︵ ┻━┻ <br/> 
 <br/>
 So much to do.... 
